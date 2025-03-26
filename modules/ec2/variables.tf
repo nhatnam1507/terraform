@@ -13,6 +13,11 @@ variable "key_name" {
   type        = string
 }
 
+variable "public_key" {
+  description = "Public key material for the SSH key pair"
+  type        = string
+}
+
 variable "security_group_id" {
   description = "ID of the security group to attach"
   type        = string

@@ -16,6 +16,12 @@ variable "aws_secret_key" {
   sensitive   = true
 }
 
+variable "aws_session_token" {
+  description = "AWS session token"
+  type        = string
+  sensitive   = true
+}
+
 variable "environment" {
   description = "Environment name (e.g., dev, staging, prod)"
   type        = string
@@ -30,6 +36,12 @@ variable "instance_type" {
 
 variable "key_name" {
   description = "Name of the SSH key pair to use"
+  type        = string
+  default     = "gh-detector"
+}
+
+variable "public_key" {
+  description = "Public key material for the SSH key pair"
   type        = string
 }
 
@@ -46,7 +58,7 @@ variable "subnet_id" {
 variable "ami_id" {
   description = "AMI ID for the EC2 instance"
   type        = string
-  default     = "ami-0c7217cdde317cfec" # Amazon Linux 2023 AMI ID (us-east-1)
+  default     = "ami-085f9c64a9b75eed5"
 }
 
 variable "tags" {
